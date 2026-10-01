@@ -1,6 +1,6 @@
 # My Addon
 
-A starting point for a Myriad addon (see "Writing an addon" in Myriad's README). It has a module, a mixin-driven module and a
+A starting point for a Myriad addon (see "Writing an addon" in [Myriad's README](https://github.com/fyzz-dev/myriad#writing-an-addon)). It has a module, a mixin-driven module and a
 HUD element.
 
 1. In the Myriad repository, run `./gradlew publishToMavenLocal`. Run it again whenever you update Myriad.
@@ -10,6 +10,6 @@ HUD element.
    your jar to `build/libs/`.
 
 For how to build real features (saved data, commands, windows, more HUD elements, services, talking to other
-addons), read `example-addon/` in the Myriad repository.
+addons), read [`example-addon/`](https://github.com/fyzz-dev/myriad/tree/master/example-addon) in the Myriad repository.
 
 The template is CC0, so your addon can use any license.
