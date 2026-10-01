@@ -1,0 +1,18 @@
+{
+	"schemaVersion": 1,
+	"id": "my-addon",
+	"version": "${version}",
+	"name": "My Addon",
+	"description": "A Myriad addon.",
+	"authors": ["You"],
+	"license": "CC0-1.0",
+	"environment": "client",
+	"entrypoints": {
+		"myriad": ["com.example.addon.MyAddon"]
+	},
+	"mixins": ["my-addon.mixins.json"],
+	"depends": {
+		"myriad": ">=${myriad_version}",
+		"minecraft": "~${minecraft_version}"
+	}
+}
