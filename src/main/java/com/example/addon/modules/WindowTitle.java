@@ -3,7 +3,7 @@ package com.example.addon.modules;
 import dev.myriad.api.module.Categories;
 import dev.myriad.api.module.Module;
 import dev.myriad.api.setting.StringSetting;
-import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.Minecraft;
 
 /**
  * A module driven by a mixin ({@code MinecraftClientMixin}) rather than events: the mixin asks
@@ -29,7 +29,7 @@ public final class WindowTitle extends Module {
 	}
 
 	private static void refresh() {
-		MinecraftClient mc = MinecraftClient.getInstance();
-		if (mc.getWindow() != null) mc.execute(mc::updateWindowTitle);
+		Minecraft mc = Minecraft.getInstance();
+		if (mc.getWindow() != null) mc.execute(mc::updateTitle);
 	}
 }

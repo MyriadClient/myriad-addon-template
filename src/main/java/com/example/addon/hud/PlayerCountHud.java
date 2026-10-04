@@ -11,7 +11,7 @@ public final class PlayerCountHud extends TextHudPanel {
 
 	@Override
 	protected void lines(Lines out) {
-		int players = preview() ? 1 : mc.getNetworkHandler() == null ? 0 : mc.getNetworkHandler().getPlayerList().size();
+		int players = preview() ? 1 : mc.getConnection() == null ? 0 : mc.getConnection().getOnlinePlayers().size();
 		out.add("Players", String.valueOf(players));
 	}
 }
