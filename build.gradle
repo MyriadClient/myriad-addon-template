@@ -31,6 +31,9 @@ loom {
 		client {
 			// Opens the Myriad menu over the title screen on launch (handy while working on panels and HUD elements).
 			property("myriad.openDesktop", "true")
+			// Scripted steps from a file (see DevConsole in Myriad): `selftest` turns every module on and off and reports
+			// any that failed; the Grim test kit in Myriad's tools/grim-test drives the same file.
+			property("myriad.devConsole", "run/myriad-dev-inbox")
 		}
 	}
 }

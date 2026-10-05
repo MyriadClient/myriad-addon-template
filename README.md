@@ -8,6 +8,14 @@ HUD element. It targets Minecraft 26.2 on Fabric with Mojang names, and needs JD
    the package `com.example.addon`, and the class `MyAddon`.
 3. `./gradlew runClient` starts the game with Myriad, Myriad Essentials and your addon. `./gradlew build` writes
    your jar to `build/libs/`.
+4. To smoke-test every module, append `selftest` to `run/myriad-dev-inbox` while the game is in a world: each module
+   is turned on for a second and off again, and the log reports any that failed or whose handlers threw. The file
+   takes any Myriad command too (`.toggle greeter on`), and Myriad's `tools/grim-test/` drives it against a local
+   Grim server.
+
+Settings a player will want to change go on the module; a behaviour that would be on nearly always should simply be
+on. Don't add a "Strict" option for anti-cheats: use the services' `forServer()` presets, which follow the player's
+anti-cheat profile (Auto detects Grim per server).
 
 For how to build real features (saved data, commands, windows, more HUD elements, services, talking to other
 addons), read [`example-addon/`](https://github.com/fyzz-dev/myriad/tree/master/example-addon) in the Myriad repository.
