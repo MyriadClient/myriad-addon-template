@@ -26,7 +26,7 @@ dependencies {
 	implementation "dev.myriad:myriad:${project.myriad_version}"
 	// Only for `./gradlew runClient`, so you can test next to the stock modules. Your addon must not use its classes:
 	// players can remove it.
-	localRuntime "dev.myriad:myriad-essentials:${project.myriad_version}"
+	localRuntime "dev.myriad:myriad-essentials:${project.essentials_version}"
 }
 
 loom {
