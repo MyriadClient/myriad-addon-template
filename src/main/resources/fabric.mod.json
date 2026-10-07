@@ -6,6 +6,10 @@
 	"description": "A Myriad addon.",
 	"authors": ["You"],
 	"license": "CC0-1.0",
+	"contact": {
+		"sources": "https://github.com/you/my-addon",
+		"issues": "https://github.com/you/my-addon/issues"
+	},
 	"environment": "client",
 	"entrypoints": {
 		"myriad": ["com.example.addon.MyAddon"]
