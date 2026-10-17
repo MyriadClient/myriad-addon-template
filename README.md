@@ -3,10 +3,11 @@
 A starting point for a [Myriad](https://myriadclient.dev/) addon (see "Writing an addon" in [Myriad's README](https://github.com/MyriadClient/myriad-core#writing-an-addon)). It has a module, a mixin-driven module and a
 HUD element. It targets Minecraft 26.2 on Fabric with Mojang names, and needs JDK 25+.
 
-1. Rename things: the mod id `my-addon` (in `fabric.mod.json`, `settings.gradle` and the mixin config's file name),
-   the package `com.example.addon`, and the class `MyAddon`. Point `contact.sources` in `fabric.mod.json` at your
-   GitHub repository: Myriad offers players your new GitHub releases (tag `v<version>`, with the jar attached) as
-   updates.
+1. Rename things: the mod id `my-addon` (in `fabric.mod.json`, `settings.gradle`, the mixin config's file name and
+   the `assets/my-addon/` folder), the package `com.example.addon`, and the class `MyAddon`. Replace the blueprint
+   `icon.png` with your own (Myriad's addons use one outlined square, a link of Myriad's logo, in their own
+   colours). Point `contact.sources` in `fabric.mod.json` at your GitHub repository: Myriad offers players your new
+   GitHub releases (tag `v<version>`, with the jar attached) as updates.
 2. `./gradlew runClient` starts the game with Myriad, Myriad Essentials and your addon. `./gradlew build` writes
    your jar to `build/libs/`. Myriad comes from its maven (`https://maven.myriadclient.dev/releases`); `myriad_version`
    in `gradle.properties` picks the release. To build against unreleased Myriad changes, run

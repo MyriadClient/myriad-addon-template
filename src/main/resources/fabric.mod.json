@@ -5,6 +5,7 @@
 	"name": "My Addon",
 	"description": "A Myriad addon.",
 	"authors": ["You"],
+	"icon": "assets/my-addon/icon.png",
 	"license": "CC0-1.0",
 	"contact": {
 		"sources": "https://github.com/you/my-addon",
