@@ -1,7 +1,7 @@
 package com.example.addon.mixin;
 
 import com.example.addon.modules.WindowTitle;
-import dev.myriad.api.module.Modules;
+import dev.myriadclient.api.module.Modules;
 import net.minecraft.client.Minecraft;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

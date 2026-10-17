@@ -11,10 +11,13 @@ base {
 
 repositories {
 	// Myriad's releases. To build against unreleased Myriad changes, run `./gradlew publishToMavenLocal` there and add
-	// mavenLocal() here.
-	maven {
-		name = "Myriad"
-		url = "https://fyzz-dev.github.io/myriad"
+	// mavenLocal() to forRepositories.
+	exclusiveContent {
+		forRepositories(maven {
+			name = "Myriad"
+			url = "https://maven.myriadclient.dev/releases"
+		})
+		filter { includeGroup "dev.myriadclient" }
 	}
 }
 
@@ -23,10 +26,10 @@ dependencies {
 	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
 
-	implementation "dev.myriad:myriad:${project.myriad_version}"
+	implementation "dev.myriadclient:myriad:${project.myriad_version}"
 	// Only for `./gradlew runClient`, so you can test next to the stock modules. Your addon must not use its classes:
 	// players can remove it.
-	localRuntime "dev.myriad:myriad-essentials:${project.essentials_version}"
+	localRuntime "dev.myriadclient:myriad-essentials:${project.essentials_version}"
 }
 
 loom {

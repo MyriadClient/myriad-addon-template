@@ -1,8 +1,8 @@
 package com.example.addon.modules;
 
-import dev.myriad.api.module.Categories;
-import dev.myriad.api.module.Module;
-import dev.myriad.api.setting.StringSetting;
+import dev.myriadclient.api.module.Categories;
+import dev.myriadclient.api.module.Module;
+import dev.myriadclient.api.setting.StringSetting;
 import net.minecraft.client.Minecraft;
 
 /**

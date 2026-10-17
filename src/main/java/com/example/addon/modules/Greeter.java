@@ -1,10 +1,10 @@
 package com.example.addon.modules;
 
-import dev.myriad.api.event.Subscribe;
-import dev.myriad.api.event.events.WorldEvent;
-import dev.myriad.api.module.Categories;
-import dev.myriad.api.module.Module;
-import dev.myriad.api.setting.StringSetting;
+import dev.myriadclient.api.event.Subscribe;
+import dev.myriadclient.api.event.events.WorldEvent;
+import dev.myriadclient.api.module.Categories;
+import dev.myriadclient.api.module.Module;
+import dev.myriadclient.api.setting.StringSetting;
 
 /** A module with a setting and an event handler. Handlers only run while the module is enabled. */
 public final class Greeter extends Module {

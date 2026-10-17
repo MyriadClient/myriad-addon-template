@@ -1,7 +1,7 @@
 package com.example.addon.hud;
 
-import dev.myriad.api.ui.hud.HudStyle;
-import dev.myriad.api.ui.hud.TextHudPanel;
+import dev.myriadclient.api.ui.hud.HudStyle;
+import dev.myriadclient.api.ui.hud.TextHudPanel;
 
 /** A HUD element: supply the lines, and sizing, alignment and the standard colour options come for free. */
 public final class PlayerCountHud extends TextHudPanel {

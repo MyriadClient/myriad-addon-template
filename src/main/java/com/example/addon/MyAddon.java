@@ -3,8 +3,8 @@ package com.example.addon;
 import com.example.addon.hud.PlayerCountHud;
 import com.example.addon.modules.Greeter;
 import com.example.addon.modules.WindowTitle;
-import dev.myriad.api.addon.AddonContext;
-import dev.myriad.api.addon.MyriadAddon;
+import dev.myriadclient.api.addon.AddonContext;
+import dev.myriadclient.api.addon.MyriadAddon;
 
 /**
  * Your addon's entry point, named in fabric.mod.json under {@code entrypoints.myriad}. Rename the package, the mod id
