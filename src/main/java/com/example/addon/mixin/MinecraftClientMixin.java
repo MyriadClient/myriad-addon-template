@@ -14,6 +14,7 @@ public abstract class MinecraftClientMixin {
 	@Inject(method = "createTitle", at = @At("RETURN"), cancellable = true)
 	private void myAddon$windowTitle(CallbackInfoReturnable<String> cir) {
 		WindowTitle m = Modules.active(WindowTitle.class);
-		if (m != null) cir.setReturnValue(m.title.get());
+		// Through the guard: an exception here turns the module off instead of crashing the game.
+		if (m != null) Modules.guard(m, () -> cir.setReturnValue(m.title.get()));
 	}
 }

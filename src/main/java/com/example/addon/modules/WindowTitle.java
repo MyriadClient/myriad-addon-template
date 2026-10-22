@@ -7,7 +7,7 @@ import net.minecraft.client.Minecraft;
 
 /**
  * A module driven by a mixin ({@code MinecraftClientMixin}) rather than events: the mixin asks
- * {@code Modules.active(WindowTitle.class)} whether to act and reads the setting from it.
+ * {@code Modules.active(WindowTitle.class)} whether to act, and reads the setting from it inside {@code Modules.guard}.
  */
 public final class WindowTitle extends Module {
 	public final StringSetting title = sgGeneral.string("Title").description("Replaces the game window's title.").defaultValue("Minecraft").build();
