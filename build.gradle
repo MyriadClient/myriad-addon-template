@@ -40,6 +40,8 @@ loom {
 			// Scripted steps from a file (see DevConsole in Myriad): `selftest` turns every module on and off and reports
 			// any that failed; the Grim test kit in Myriad's tools/grim-test drives the same file.
 			property("myriad.devConsole", "run/myriad-dev-inbox")
+			// Dev checks: a service called off the render thread is logged, and .bench measures core's hot paths.
+			property("myriad.dev", "true")
 		}
 	}
 }
