@@ -42,6 +42,10 @@ loom {
 			property("myriad.devConsole", "run/myriad-dev-inbox")
 			// Dev checks: a service called off the render thread is logged, and .bench measures core's hot paths.
 			property("myriad.dev", "true")
+			// -PquickPlayServer=localhost:25565 -Pusername=GrimTester joins a server as that player (a Grim test server,
+			// see Testing in Myriad's docs).
+			if (project.hasProperty("quickPlayServer")) programArgs("--quickPlayMultiplayer", project.property("quickPlayServer").toString())
+			if (project.hasProperty("username")) programArgs("--username", project.property("username").toString())
 		}
 	}
 }
