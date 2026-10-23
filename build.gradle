@@ -1,5 +1,9 @@
+// The Myriad addon plugin sets up the rest: Loom, Minecraft, Fabric and Myriad at the versions that Myriad release was
+// built with, the dev client (`./gradlew runClient`, with Essentials), the check that you use only Myriad's API, and
+// publishing. Its version is the Myriad release you build against; https://myriadclient.dev/docs/develop/setup lists
+// what it does and the switches its dev client takes.
 plugins {
-	id 'net.fabricmc.fabric-loom' version "${loom_version}"
+	id 'dev.myriadclient.addon' version '0.10.0'
 }
 
 version = project.mod_version
@@ -7,64 +11,4 @@ group = project.maven_group
 
 base {
 	archivesName = project.archives_base_name
-}
-
-repositories {
-	// Myriad's releases. To build against unreleased Myriad changes, run `./gradlew publishToMavenLocal` there and add
-	// mavenLocal() to forRepositories.
-	exclusiveContent {
-		forRepositories(maven {
-			name = "Myriad"
-			url = "https://maven.myriadclient.dev/releases"
-		})
-		filter { includeGroup "dev.myriadclient" }
-	}
-}
-
-dependencies {
-	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
-	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
-
-	implementation "dev.myriadclient:myriad:${project.myriad_version}"
-	// Only for `./gradlew runClient`, so you can test next to the stock modules. Your addon must not use its classes:
-	// players can remove it.
-	localRuntime "dev.myriadclient:myriad-essentials:${project.essentials_version}"
-}
-
-loom {
-	runs {
-		client {
-			// Opens the Myriad menu over the title screen on launch (handy while working on panels and HUD elements).
-			property("myriad.openDesktop", "true")
-			// Scripted steps from a file (see DevConsole in Myriad): `selftest` turns every module on and off and reports
-			// any that failed; the Grim test kit in Myriad's tools/grim-test drives the same file.
-			property("myriad.devConsole", "run/myriad-dev-inbox")
-			// Dev checks: a service called off the render thread is logged, and .bench measures core's hot paths.
-			property("myriad.dev", "true")
-			// -PquickPlayServer=localhost:25565 -Pusername=GrimTester joins a server as that player (a Grim test server,
-			// see Testing in Myriad's docs).
-			if (project.hasProperty("quickPlayServer")) programArgs("--quickPlayMultiplayer", project.property("quickPlayServer").toString())
-			if (project.hasProperty("username")) programArgs("--username", project.property("username").toString())
-		}
-	}
-}
-
-processResources {
-	def props = [version: project.version, myriad_version: project.myriad_version, minecraft_version: project.minecraft_version]
-	inputs.properties props
-	filesMatching("fabric.mod.json") {
-		expand props
-	}
-}
-
-tasks.withType(JavaCompile).configureEach {
-	it.options.release = 25
-	it.options.encoding = "UTF-8"
-}
-
-java {
-	withSourcesJar()
-	sourceCompatibility = JavaVersion.VERSION_25
-	targetCompatibility = JavaVersion.VERSION_25
 }
