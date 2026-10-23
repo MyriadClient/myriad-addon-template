@@ -1,7 +1,7 @@
 package com.example.addon.modules;
 
-import dev.myriadclient.api.module.Categories;
 import dev.myriadclient.api.module.Module;
+import dev.myriadclient.api.module.Tags;
 import dev.myriadclient.api.setting.StringSetting;
 import net.minecraft.client.Minecraft;
 
@@ -13,7 +13,7 @@ public final class WindowTitle extends Module {
 	public final StringSetting title = sgGeneral.string("Title").description("Replaces the game window's title.").defaultValue("Minecraft").build();
 
 	public WindowTitle() {
-		super(Categories.MISC, "Window Title", "Sets the game window's title.");
+		super(Tags.MISC, "Window Title", "Sets the game window's title.");
 		// The title only refreshes when vanilla asks for it; nudge it whenever ours changes.
 		title.onChanged(v -> refresh());
 	}
