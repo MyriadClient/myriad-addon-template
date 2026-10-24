@@ -3,7 +3,7 @@
 // publishing. Its version is the Myriad release you build against; https://myriadclient.dev/docs/develop/setup lists
 // what it does and the switches its dev client takes.
 plugins {
-	id 'dev.myriadclient.addon' version '1.0.0'
+	id 'dev.myriadclient.addon' version '1.1.0'
 }
 
 version = project.mod_version
